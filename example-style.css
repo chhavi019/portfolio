@@ -1,0 +1,44 @@
+/*
+ *  Additional styling for the website (index.html).
+ *  
+ *  Jack Guinane
+ *  2018-07-31
+ */
+
+html
+{
+    background-color: cadetblue;
+}
+
+.install-page
+{
+    background-color: #000;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+.install-page p
+{
+    font-size: 1rem;
+    color: limegreen;
+}
+
+.install-page a
+{
+    font-size: 1rem;
+    color: aqua;
+}
+
+
+.baby-image {
+    background-image: url('https://i.pinimg.com/564x/f4/ed/0f/f4ed0f16f6ca1b61c8c8e7a7cc598820.jpg');
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+    background-position: center;
+}
+
+.alert-page
+{
+    background-color: #c0c0c0;
+    padding-bottom: 20px;
+}

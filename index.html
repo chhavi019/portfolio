@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>for me</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <script src="draggable.js" type="text/javascript"></script>
+    <link href="example-style.css" rel="stylesheet" type="text/css">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutSection = document.querySelector("#about-section .text");
+
+            // Set up the Intersection Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        startTypingEffect(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            // Observe the about section
+            observer.observe(aboutSection);
+
+            function startTypingEffect(element) {
+                const text = "hello visitor, my name is chhavi and i'm currently a 3rd year computer engineering student at Thapar University. I love graphics (static and dynamic) ranging from brutalism to minimalism (as you'll further witness) and designing. Combining my interests, ive made this portfolio (in 7 hrs 🤧). Sit back n scroll...";
+
+                // Set initial height to accommodate the full text
+                element.style.height = element.scrollHeight + 'px';
+
+                function TypingEffect(element, text, i = 0) {
+                    if (i < text.length) {
+                        element.textContent += text[i];
+                        element.style.opacity = 1; /* Set opacity to make the text visible */
+                        element.scrollTop = element.scrollHeight; /* Scroll to the bottom */
+                        setTimeout(() => TypingEffect(element, text, i + 1), 50);
+                    }
+                }
+
+                TypingEffect(element, text);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="front">
+        <video autoplay loop muted plays-inline class="back-video"> 
+            <source src="images/video.mp4" type="video/mp4">
+        </video>
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                
+                <li><a href="#about-section">About</a></li>
+                <li><a href="#work-section">Work</a></li>
+                <li><a href="#final-section">Contact Me</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1 align="left">hi,</h1>
+            <h1> i'm chhavi</h1>
+            <a href="https://www.instagram.com/chhavi.ptsd/?hl=en" target="_blank" rel="noopener noreferrer">art page</a>
+        </div>
+    </div>
+
+
+
+    
+    <div id="about-section">
+        <div class="text">
+        
+        </div>
+        
+    </div>
+    
+    <div class="work" id="work-section">
+                <!-- <h1 style="color: #fff" > Work</h1> -->
+
+
+   
+        
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        
+        <model-viewer src="http://localhost:8000/model/urbancomp.glb" camera-controls="" ar-status="not-presenting" style="width: 50%; height: 40vh;"></model-viewer>
+        <model-viewer src="http://localhost:8000/model/urban2.glb" camera-controls="" ar-status="not-presenting" style="width: 50%; height: 40vh;"></model-viewer>
+        <!-- <h1 style="color: #fff" > Work</h1> -->
+        <section><p >I have worked with homegrown brands as a freelancer to ideate, design and mockup clothing articles such, but not limited to tshirts, shirts and jumpers.
+        Some of the notable brands are <span class="hiddentxt"><a >Unreborn Project</a></span><span class="hiddenimg"><img src="images/unre.png" width="250" /></span> </p><p>and 
+        <span class="hiddentxt"><a href="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg">UrbanFlux</a></span><span class="hiddenimg"><img src="images/urban.png" width="250" /></span>. Here are some 3d models of the tshirts I've designed for them. </p>
+    </section>
+
+
+    
+    </div>
+   
+    <div class="window" id="about" style="width:390px;">
+        <div class="window-header" id="aboutheader">
+            About.txt
+            <button onclick="this.parentNode.parentNode.style.display = 'none';">X</button>
+            <button onclick="this.parentNode.parentNode.style.display = 'none';">_</button>
+        </div>
+        
+        <p>This is a parallaxed compilation of some of the designs i've made over the years.</p>
+        <p></p>
+        <p>(c) Jan 2024</p>
+        
+    </div>
+    <script>dragElement(document.getElementById("about"));</script>
+
+    <div class="window install-page" id="install" style="top:30px;left:200px;">
+        <div class="window-header" id="installheader">
+            A brief Window
+            <button onclick="this.parentNode.parentNode.style.display = 'none';">X</button>
+            <button onclick="this.parentNode.parentNode.style.display = 'none';">_</button>
+        </div>
+        <p>:< yummy head:</p>
+        <p>>: Skills:</p>
+        <p>Adobe Photoshop (predominantly)</p>
+        <p>Typography</p>
+        <p>Branding</p>
+        <p>Python</p>
+        <p>Touch Designer</p>
+        <p>Adobe After Effects</p>
+        <p>Blender (Basics)</p>
+        <p>Figma</p>
+
+        <!-- <a href="">Download from Github</a> -->
+       
+        
+        
+    </div>
+    <script>dragElement(document.getElementById("install"));</script>
+    
+    <div class="window baby-image" id="image" style="width:300px;height:250px;top:30px;left:650px;">
+        <div class="window-header" id="imageheader">
+            image.jpg
+            <button onclick="this.parentNode.parentNode.style.display = 'none';">X</button>
+            <button onclick="this.parentNode.parentNode.style.display = 'none';">_</button>
+        </div>
+    </div>
+    <script>dragElement(document.getElementById("image"));</script>
+    
+    <div class="window alert-page" id="alert" style="width:400px;left:900px;top:200px;">
+        <div class="window-header" id="alertheader">
+            Alert
+            <button onclick="this.parentNode.parentNode.style.display = 'none';">X</button>
+            <button onclick="this.parentNode.parentNode.style.display = 'none';">_</button>
+        </div>
+        <br>
+        <p>You have reached my portfolio. Feel free to move these boxes around. tehe.</p>
+        <button class="classic-button" onclick="this.parentNode.style.display = 'none';">OK</button>
+        
+    </div>
+
+
+
+    <div class="wrapper">
+        <header>
+          <img src="images/backart.png" class="background">
+          <img src="images/frontart.png" class="foreground">
+          <!-- <h1 >Welcome!</h1> -->
+        </header>
+        <!-- <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. labore obcaecati, recusandae saepe?
+                </p>
+        </section> -->
+      </div>
+
+
+      <div class="final" id="final-section">
+        <nav>
+            <h1>Contact me</h1>
+            <ul>
+                <li>i do not wish to be contacted</li>
+                <li><a href="https://www.instagram.com/chhavi.ptsd/?hl=en" target="_blank" rel="noopener noreferrer">instagram</a></li>
+                
+                <li><a href="mailto:chhavigupta1902@gmail.com">email</a></li>
+            </ul>
+        </nav>
+    
+        <div class="horizontal-division">
+            <img src="images/contact.jpeg" alt="Contact Image">
+        </div>
+    </div>
+    <script>dragElement(document.getElementById("alert"));</script>
+    
+    
+
+</body>
+</html>
